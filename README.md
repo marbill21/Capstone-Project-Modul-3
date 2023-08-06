@@ -1,80 +1,81 @@
 # Capstone-Project-Modul-3
-Nama : Mario Billy Gunawan <br>
+Name : Mario Billy Gunawan <br>
 Student ID : JCDSOL-009-022 <br>
-Topik : [Saudi Arabia Used Cars Dataset](https://www.kaggle.com/datasets/turkibintalib/saudi-arabia-used-cars-dataset) 
+Topic : [Saudi Arabia Used Cars Dataset](https://www.kaggle.com/datasets/turkibintalib/saudi-arabia-used-cars-dataset) 
 <hr>
 
 ## Business Problem Understanding
 ### Context
 
-Pada saat ini, mobil menjadi salah satu kebutuhan utama bagi masyarakat perkotaan yang memiliki mobilitas tinggi. Mobil dapat memberikan rasa aman, nyaman, dan menghemat waktu bagi penggunanya, terutama apabila tidak ada transportasi umum yang memadai. Dalam memenuhi kebutuhan ini, konsumen tidak hanya tertarik dalam membeli mobil dengan keadaan baru, tetapi juga banyak yang tertarik untuk membeli mobil dalam keadaan bekas. Di negara Arab Saudi, terdapat sebuah platform jual-beli mobil bekas bernama Syarah.com. Pada platform ini, konsumen dapat mencari mobil bekas impian mereka dengan harga yang lebih murah dibandingkan dengan harga membeli mobil yang baru. Rata-rata kondisi dari setiap mobil bekas yang dijualpun juga dalam keadaan baik dan depresiasi harga cenderung tidak terlalu tinggi dibandingkan dengan mobil baru. Syarah.com sebagai platform penyedia jasa jual-beli mobil bekas ingin konsumen mendapatkan pengalaman yang terbaik ketika bertransaksi membeli mobil bekas. Oleh karena itu, Syarah.com menyewa seorang Data Scientist untuk membantu mereka dalam membuat sebuah model bisnis yang dapat memprediksi harga mobil bekas dan bisa menguntungkan kedua belah pihak antara pembeli dan penjual.
+At present, cars have become one of the primary necessities for urban communities with high mobility. Cars can provide a sense of security, comfort, and time savings for their users, especially when there is inadequate public transportation. In meeting this need, consumers are not only interested in purchasing new cars but also many are interested in buying used cars. In the Kingdom of Saudi Arabia, there is a platform for buying and selling used cars called Syarah.com. On this platform, consumers can search for their dream used cars at prices lower than buying new cars. On average, the condition of each used car being sold is also in good condition, and the depreciation in price tends to be not as high as with new cars. Syarah.com, as a platform providing used car buying and selling services, aims for consumers to have the best experience when transacting to buy used cars. Therefore, Syarah.com has hired a Data Scientist to assist them in creating a business model that can predict the prices of used cars and be mutually beneficial for both buyers and sellers.
 
-Dataset terdiri atas 5624 data mobil bekas yang dikumpulkan dari Syarah.com. Setiap baris mewakili mobil bekas. Informasi lain yang mewakili setiap mobil adalah nama mobil, model mobil, tahun pembuatan, asal mobil, opsi kelengkapan mobil, kapasitas mesin, jenis transmisi, jarak tempuh yang pernah ditempuh mobil, harga berdasarkan wilayah, dan apakah mobil dapat dinegosiasikan. <br>
+The dataset consists of 5624 pieces of data about used cars collected from Syarah.com. Each row represents a used car. Other information representing each car includes the car's name, model, year of manufacture, origin of the car, equipment options, engine capacity, type of transmission, mileage of the car, price by region, and whether the price of the car is negotiable. <br>
 
 ### Problem Statement
-Permasalahan yang dihadapi oleh Syarah.com adalah menentukan model bisnis yang dapat menguntungkan secara finansial untuk perusahaan ini dalam menjual mobil bekas. Tetapi juga memberikan pengalaman yang baik bagi para calon pembeli untuk mendapatkan mobil bekas layak pakai dengan harga yang wajar.
+The challenge faced by Syarah.com is to determine a business model that can be financially beneficial for the company in selling used cars, while also providing a good experience for potential buyers to obtain usable used cars at reasonable prices.
 
 ### Goals
-Menentukan model bisnis yang dapat memprediksi dan membantu calon pembeli dalam mendapatkan harga yang wajar untuk setiap mobil bekas yang akan dibeli. Tetapi juga memberikan keuntungan bagi sang penjual mobil bekas, yaitu Syarah.com. 
+Establishing a business model that can predict and assist potential buyers in obtaining a fair price for each used car they intend to purchase, while also benefiting the seller of the used car, namely Syarah.com.
 
 ### Analytic Approach
-Melakukan analisa data untuk menemukan pola dari fitur-fitur yang ada dan dapat membedakan satu jenis mobil dengan jenis mobil lainnya. Kemudian membuat sebuah model regresi yang dapat membantu perusahaan dalam memprediksi harga jual yang tepat dan juga dapat bermanfaat bagi para calon pembeli dalam mendapatkan harga yang wajar untuk mobil bekas yang ingin mereka beli di Arab Saudi.
+Conducting data analysis to discover patterns within the existing features that can distinguish one type of car from another. Subsequently, creating a regression model that can assist the company in predicting an accurate selling price, while also being beneficial for potential buyers to obtain a reasonable price for the used cars they intend to purchase in Saudi Arabia.
 
 ### Metric Evaluation
-Evaluasi metrik yang akan digunakan dalam membangun model machine learning ini, yaitu:
-- R-Square  : Menjelaskan seberapa besar variasi nilai Y yang dapat dijelaskan oleh model.
-- RMSE      : Nilai rataan akar kuadrat dari error.
-- MAE       : Rataan nilai absolut dari error.
-- MAPE      : Rataan persentase error yang dihasilkan oleh suatu model regresi.
+The evaluation metrics that will be used in building this machine learning model are:
+- R-Square: Explains how much of the variation in Y values can be explained by the model.
+- RMSE: The root mean square value of errors.
+- MAE: The mean absolute value of errors.
+- MAPE: The mean percentage error generated by a regression model.
 
-Model akan semakin akurat dalam memprediksi harga suatu mobil bekas sesuai dengan limitasi fitur yang dipakai apabila nilai R-Square semakin mendekati nilai 1 dan nilai RMSE, MAE, dan MAPE yang dihasilkan semakin kecil.
+The model will become more accurate in predicting the price of a used car according to the limitations of the features used, as the R-Square value approaches 1 and the values of RMSE, MAE, and MAPE become smaller.
 <hr>
 
 ## Data Understanding
-- Dataset berasal dari daftar mobil bekas yang dijual di Arab Saudi via syarah.com.
-- Informasi dan spesifikasi mengenai mobil yang dijual di syarah.com diwakili oleh setiap baris data.
+- The dataset originates from a list of used cars sold in Saudi Arabia through syarah.com.
+- Information and specifications about the cars sold on syarah.com are represented by each data row.
 
 **Attributes Information**
 
 | **Attribute** | **Data Type** | **Description** |
 | --- | --- | --- |
-| Type | Object | Jenis mobil bekas |
-| Region | Object | Wilayah dimana mobil bekas ditawarkan untuk dijual |
-| Make | Object | Nama perusahaan pembuat mobil bekas |
-| Gear_Type | Object | Jenis transmisi yang digunakan mobil bekas (Automatic / Manual) |
-| Origin | Object | Asal mobil bekas (Saudi / Gulf Arabic / Other) |
-| Options | Object | Opsi kelengkapan mobil bekas (Full / Semi-Full / Standard) |
-| Year | Integer | Tahun produksi mobil bekas |
-| Engine_Size | Float | Kapasitas mesin mobil bekas |
-| Mileage | Integer | Jarak tempuh mobil bekas |
-| Negotiable | Boolean | Benar jika harga 0, berarti mobil bekas dapat dinegosiasi |
-| Price | Integer | Harga dari mobil bekas |
+| Type | Object | Type of used cars. |
+| Region | Object | Regions where used cars are offered for sale. |
+| Make | Object | Name of the company that manufactures used cars. |
+| Gear_Type | Object | Type of transmission used in used cars (Automatic / Manual). |
+| Origin | Object | Origin of used cars (Saudi / Gulf Arabic / Other). |
+| Options | Object | Options and features of used cars (Full / Semi-Full / Standard). |
+| Year | Integer | Year of production of used cars. |
+| Engine_Size | Float | Engine capacity of used cars. |
+| Mileage | Integer | Mileage of used cars. |
+| Negotiable | Boolean | Correct, if the price is 0, it means that the price of the used car is negotiable. |
+| Price | Integer | Price of the used car. |
 
-Atribut Price merupakan target kolom yang akan diprediksi (Dependent Variable) dan kolom-kolom lain merupakan faktor-faktor yang akan mempengaruhi hasil prediksi (Independent Variable).
+The Price attribute is the target column to be predicted (dependent variable), and the other columns are factors that will influence the prediction outcome. (Independent Variable).
 <hr>
 
 ## Conclusion
 
-Berikut ini merupakan beberapa kesimpulan yang dapat diambil dari pembangunan model secara keseluruhan:
+Here are some conclusions that can be drawn from the overall model development:
 
-- Fitur 'Year' dan 'Engine_Size' memiliki korelasi positif dengan fitur target 'Price', sedangkan fitur 'Mileage' berkorelasi negatif. Untuk fitur kategorikal, fitur 'Type' memiliki korelasi ratio yang paling baik terhadap fitur target 'Price' dibandingkan fitur kategorikal lainnya.
-- Terdapat beberapa batasan yang ditetapkan dalam membangun model ini, yaitu:
+- Features 'Year' and 'Engine_Size' have a positive correlation with the target feature 'Price', while the 'Mileage' feature has a negative correlation. Among the categorical features, the 'Type' feature has the best ratio correlation with the target feature 'Price' compared to other categorical features.
+- There are several limitations set in building this model, namely:
 
-    1. Mengeliminasi baris dengan isi data yang duplikat sebanyak 4 buah, baris dengan isi data == 0 dan 1 pada fitur 'Price' sebanyak 1796 dan 1 buah. Data-data tersebut harus dieliminasi supaya model yang dibangun dapat memprediksi dengan menggunakan harga yang nyata dan mendapatkan hasil prediksi yang baik, akan tetapi hal tersebut membuat jumlah observasi data menjadi cukup banyak berkurang.
-    2. Dalam memprediksi, model menggunakan data fitur 'Year' dengan nilai kurang dari atau sama dengan tahun 2025.
-    3. Dalam memprediksi, model menggunakan data fitur 'Engine_Size' dengan nilai kurang dari atau sama dengan 7.
-    4. Dalam memprediksi, model menggunakan data fitur 'Mileage' dengan nilai kurang dari 385500 km.
-    5. Dalam memprediksi, model menggunakan data fitur 'Price' dengan nilai kurang dari atau sama dengan 183750 Saudi Riyal (SAR).
-- Metrik evaluasi yang digunakan dalam pembangunan model ini adalah R-square, RMSE, MAE, dan MAPE. 
-    - Nilai R-square menunjukkan seberapa besar pengaruh fitur-fitur (variabel independen) terhadap target (variabel dependen) secara menyeluruh. Jika dilihat nilai R-square yang dihasilkan oleh model XGBoost setelah dilakukan proses tuning hyperparameter lebih tinggi dibandingkan dengan model XGBoost sebelum dilakukan proses tuning hyperparameter. Nilai R-square tersebut adalah 0.632565, artinya fitur dapat menjelaskan 63.25% dari keseluruhan model.
-    - Nilai RMSE setelah dilakukan proses tuning hyperparameter adalah sebesar nilai 23757.04, artinya model yang dibangun untuk memprediksi harga mobil bekas di antara rentang harga 0 sampai dengan 183750 SAR, maka harga rata-rata dari prediksi tersebut akan meleset sekitar 23757.04 dari harga aktual. 
-    - Harga prediksi tersebut bisa saja meleset lebih jauh lagi apabila dilihat dari nilai MAE dan MAPE yang besar sebelum dilakukan proses tuning hyperparameter. Beruntung nilai RMSE, MAE, dan MAPE dari model mengalami penurunan setelah dilakukan proses tuning hyperparameter. Hal ini menunjukkan bahwa proses tersebut berhasil meningkatkan kinerja model dan dapat membuat prediksi yang lebih baik.
+    1. Eliminating rows with duplicate data, totaling 4 occurrences, and rows with data values equal to 0 and 1 in the 'Price' feature, totaling 1796 and 1 occurrence respectively. These data points need to be removed to ensure that the model being built can predict using real prices and achieve accurate prediction results. However, this reduction in data observations leads to a significant decrease in the dataset size.
+    2. For prediction, the model uses 'Year' feature data with values less than or equal to the year 2025.
+    3. For prediction, the model uses 'Engine_Size' feature data with values less than or equal to 7.
+    4. For prediction, the model uses 'Mileage' feature data with values less than 385,500 km.
+    5. For prediction, the model uses 'Price' feature data with values less than or equal to 183,750 Saudi Riyal (SAR).
+   
+- The evaluation metrics used in the model development are R-square, RMSE, MAE, and MAPE.
+- The R-square value indicates how much influence the features (independent variables) have on the target (dependent variable) overall. If we look at the R-square value generated by the XGBoost model after the hyperparameter tuning process, it is higher compared to the XGBoost model before the hyperparameter tuning process. The R-square value is 0.632565, which means that the features can explain 63.25% of the overall model.
+- The RMSE value after the hyperparameter tuning process is 23757.04, which means that the built model for predicting the price of used cars within the price range of 0 to 183750 SAR will, on average, deviate by about 23757.04 from the actual price.
+- These predicted prices could deviate even further, considering the large values of MAE and MAPE before the hyperparameter tuning process. Fortunately, the RMSE, MAE, and MAPE values of the model decreased after the hyperparameter tuning process. This indicates that the process successfully improved the model's performance and led to better predictions.
 <hr>
 
 ## Recommendation
 
-Berikut ini merupakan beberapa rekomendasi yang dapat diberikan dari pembangunan model agar dapat menghasilkan prediksi yang lebih baik:
+Here are some recommendations that can be provided from the model development in order to achieve better predictions:
 
-- Setelah dilakukan proses eliminasi berupa penghapusan baris data dengan nilai == 0 dan 1 SAR pada fitur 'Price', pembatasan nilai pada baris data di fitur 'Year', 'Engine_Size', 'Mileage', dan 'Price' karena adanya outlier, jumlah observasi data yang digunakan untuk pembangunan model hanya tersisa 3.408 baris data atau sekitar 40% dari jumlah pada dataframe awal. Oleh karena itu, untuk pembangunan model selanjutnya disarankan untuk menambahkan jumlah baris data yang akan digunakan, sehingga dapat menghasilkan prediksi yang lebih akurat, karena data yang digunakan pada pembangunan model saat ini sangat sedikit untuk bisa memberikan hasil prediksi yang maksimal.
-- Menambahkan beberapa fitur lain yang memiliki korelasi yang baik dengan fitur target 'Price'. Seperti warna mobil, kondisi interior dan eksterior mobil, kelengkapan dokumen (BPKB, STNK, dan Buku Manual), riwayat pemeliharaan mobil, dan riwayat kecelakaan. (Sumber: [What are the factors that influence a used car price?](https://carsellzone.com/blog/detail/factors-affect-car-price))
-- Menambahkan fitur yang dapat membedakan antara mobil classic dengan mobil biasa yang digunakan sehari-hari. Hal ini dikarenakan korelasi antara fitur 'Mileage' dengan target 'Price' antara mobil classic dengan mobil biasa memberikan hasil yang berbeda. Contohnya, mobil classic yang diproduksi pada tahun 1970 cenderung akan lebih mahal dibandingkan dengan mobil keluaran tahun 2005. Akan tetapi, untuk mengklasifikasikan hal tersebut diperlukan adanya domain knowledge mengenai jenis mobil apa saja yang dapat dikategorikan ke dalam jenis mobil classic.
+- After the elimination process, which involved removing rows with values of 0 and 1 SAR in the 'Price' feature, setting value constraints on the 'Year', 'Engine_Size', 'Mileage', and 'Price' features due to outliers, the number of data observations used for model development is reduced to 3,408 rows, or about 40% of the initial dataframe's size. Therefore, for future model development, it is advisable to increase the number of data rows to be used, in order to achieve more accurate predictions. The current dataset used for model development is quite small to provide optimal prediction results.
+- Adding additional features that have a strong correlation with the target feature 'Price'. Such features could include car color, interior and exterior condition, document completeness (vehicle registration, license, and owner's manual), maintenance history, and accident history. (Source: [What are the factors that influence a used car price?](https://carsellzone.com/blog/detail/factors-affect-car-price))
+- Adding a feature that can differentiate between classic cars and regular everyday cars. This is because the correlation between the 'Mileage' feature and the 'Price' target varies between classic cars and regular cars. For example, classic cars produced in 1970 may tend to be more expensive than cars produced in 2005. However, to classify such cars, domain knowledge about which car types can be categorized as classic cars is required.
